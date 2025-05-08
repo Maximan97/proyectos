@@ -1,0 +1,50 @@
+# Conversion de unidades (ej: kilometros en millas, grados celcius a
+# fahrenheit, kilogramos en libras)
+# 1 kilometro es igual a 0.621 millas
+# 0 grados celcius es igual a 32 grados fahrenheit
+# 1 kilogramos es igual a 2.205 libras
+
+import os
+
+def conversion_longitudinal():
+    # pregunta valor de kilometro y se lo multiplica por millas
+    kilometro = int(input("Cuantos kilometros son: "))
+    millas = 0.621
+    print(f"son {kilometro * millas} millas.")
+    input('Para seguir apretame el "enter"') # pausa táctica
+
+def temperatura():
+    # pregunto por el valor de celcius para multiplicar el valor por 
+    # 1.8 y despues se le suma 32
+    celcuis = int(input("Cuantos grados es: "))
+    fahrenhait = 32 
+    print(f"Serian {(celcuis * 1.8) + fahrenhait} grados fahrenhait.")
+    input('Para seguir apretame el "enter"')
+
+def conversor_masa():
+    # multiclica kilogramo * libra y te da el resultado
+    kilogramo = int(input("Cuantos kilogramos son: "))
+    libra = 2.205
+    print(f"Serian {kilogramo * libra} libras.")
+    input('Para seguir apretame el "enter"')
+
+while True: # menu
+    os.system("cls") # limpia la terminal al finalizar la funcion
+    print(" Conversor de unidades básicas.")
+    print("1. Kilómetro a millas.")
+    print("2. Celcius a fahrenhait.")
+    print("3. Kilogramos a libras.")
+    print("0. Salir.")
+    
+    opcion = input("Elige una opción: ") 
+    
+    if opcion == "1":
+        conversion_longitudinal()
+    elif opcion == "2":
+        temperatura()
+    elif opcion == "3":
+        conversor_masa()
+    elif opcion == "0":
+        exit()
+    else:
+        print("Opción no valida.")
